@@ -41,7 +41,7 @@ const CardComponent = ({ user, theme }) => {
       }}
     >
       <Grid container columnSpacing={5}>
-        <Grid item xs={3} sx={{ display: { xs: "none", sm: "block" } }}>
+        <Grid item xs={0} sm={3} sx={{ display: { xs: "none", sm: "block" } }}>
           <CardMedia
             component="img"
             image={user.avatar_url}
@@ -50,7 +50,7 @@ const CardComponent = ({ user, theme }) => {
           />
         </Grid>
 
-        <Grid item xs={9}>
+        <Grid item xs={12} sm={9}>
           <Grid container columnSpacing={3} sx={{ marginBottom: "20px" }}>
             <Grid
               item
