@@ -32,6 +32,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
+      {/* <ThemeProvider theme={lightTheme}> */}
       <StyledContainer disableGutters={true}>
         <SearchBar />
         <CardComponent user={user} theme={darkTheme} />

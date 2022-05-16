@@ -4,9 +4,9 @@ export const lightTheme = createTheme({
   palette: {
     type: "light",
     primary: {
-      main: "#0079ff",
-      light: "#0079ff",
-      dark: "#0079ff",
+      main: "#2b3442",
+      light: "#2b3442",
+      dark: "#2b3442",
     },
     secondary: {
       main: "#f50057",
@@ -18,7 +18,7 @@ export const lightTheme = createTheme({
     text: {
       secondary: "#4B6A9B",
       primary: "#2b3442",
-      disabled: "rgba(0,0,0,0.8)",
+      disabled: "rgba(0,0,0,0.6)",
     },
   },
   typography: {
@@ -27,6 +27,7 @@ export const lightTheme = createTheme({
       fontWeight: 700,
       fontSize: 26,
       lineHeight: 1.15,
+      marginBottom: "10px",
     },
     h2: {
       fontSize: 23,
@@ -38,9 +39,11 @@ export const lightTheme = createTheme({
     },
     h4: {
       fontSize: 13,
+      marginBottom: "10px",
     },
     body1: {
       fontSize: 15,
+      marginLeft: "15px",
     },
   },
   shape: {
@@ -52,9 +55,9 @@ export const darkTheme = createTheme({
   palette: {
     type: "dark",
     primary: {
-      main: "#0079ff",
-      light: "#0079ff",
-      dark: "#0079ff",
+      main: "#fefefe",
+      light: "#fefefe",
+      dark: "#fefefe",
     },
     secondary: {
       main: "#f50057",
@@ -66,7 +69,7 @@ export const darkTheme = createTheme({
     text: {
       secondary: "#4B6A9B",
       primary: "#fefefe",
-      disabled: "rgba(254,254,254,0.8)",
+      disabled: "rgba(254,254,254,0.6)",
     },
   },
   typography: {
@@ -75,6 +78,7 @@ export const darkTheme = createTheme({
       fontWeight: 700,
       fontSize: 26,
       lineHeight: 1.15,
+      marginBottom: "10px",
     },
     h2: {
       fontSize: 23,
@@ -86,9 +90,11 @@ export const darkTheme = createTheme({
     },
     h4: {
       fontSize: 13,
+      marginBottom: "10px",
     },
     body1: {
       fontSize: 15,
+      marginLeft: "15px",
     },
   },
   shape: {
