@@ -4,7 +4,6 @@ import { ReactComponent as DarkIcon } from "../../assets/icon-moon.svg";
 import { StyledDiv } from "./title.styles";
 
 const TitleContainer = ({ mode, themeHandler }) => {
-  console.log(mode);
   return (
     <Container>
       <Grid container justifyContent="space-between">

@@ -5,8 +5,6 @@ import { ReactComponent as LocationIcon } from "../../assets/icon-location.svg";
 import { ReactComponent as WebsiteIcon } from "../../assets/icon-website.svg";
 
 const CardComponent = ({ user, theme }) => {
-  console.log(user);
-
   const months = [
     "Jan",
     "Feb",
