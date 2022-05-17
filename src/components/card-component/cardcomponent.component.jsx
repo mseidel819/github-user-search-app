@@ -30,9 +30,15 @@ const CardComponent = ({ user, theme }) => {
 
   return (
     <Card
+      role="main"
       sx={{
         maxWidth: "700px",
-        padding: "32px 49px 60px 49px",
+        padding: {
+          md: "32px 49px 60px 49px",
+          sm: "32px 36px 50px 36px",
+          xs: "32px 28px",
+        },
+        margin: "12px",
         boxShadow: `${
           theme.palette.type === "dark"
             ? "0 0 0 0 rgba(0, 0,0, 0)"
