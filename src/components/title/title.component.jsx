@@ -7,7 +7,7 @@ const TitleContainer = ({ mode, themeHandler }) => {
     <Container>
       <Grid container justifyContent="space-between">
         <Grid item>
-          <Typography variant="h2" color="text.primary">
+          <Typography variant="h1" color="text.primary">
             devfinder
           </Typography>
         </Grid>

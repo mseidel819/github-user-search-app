@@ -70,10 +70,10 @@ const CardComponent = ({ user, theme }) => {
 
             <Grid container item xs={8} sm={12}>
               <Grid item xs={12} sm={8}>
-                <Typography variant="h1">
+                <Typography variant="h2">
                   {user.name ? user.name : user.login}
                 </Typography>
-                <Typography variant="h3" color="primary">
+                <Typography variant="h3" color="secondary">
                   @{user.login}
                 </Typography>
               </Grid>
