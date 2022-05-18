@@ -30,9 +30,7 @@ const CardComponent = ({ user, theme }) => {
     <Card
       role="main"
       sx={{
-        maxWidth: "700px",
         padding: {
-          md: "32px 49px 60px 49px",
           sm: "32px 36px 50px 36px",
           xs: "32px 28px",
         },
@@ -72,7 +70,9 @@ const CardComponent = ({ user, theme }) => {
 
             <Grid container item xs={8} sm={12}>
               <Grid item xs={12} sm={8}>
-                <Typography variant="h1">{user.name}</Typography>
+                <Typography variant="h1">
+                  {user.name ? user.name : user.login}
+                </Typography>
                 <Typography variant="h3" color="primary">
                   @{user.login}
                 </Typography>
@@ -92,7 +92,7 @@ const CardComponent = ({ user, theme }) => {
             ) : (
               <Typography
                 variant="body1"
-                color="rgba(254,254,254,0.5)"
+                color="text.disabled"
                 sx={{ marginLeft: "0px" }}
               >
                 This profile has no bio
@@ -102,22 +102,22 @@ const CardComponent = ({ user, theme }) => {
           <Card
             sx={{
               backgroundColor: "background.default",
-              padding: "15px 32px",
+              padding: { sm: "15px 32px", xs: "15px 12px" },
               borderRadius: "10px",
               marginBottom: "38px",
               boxShadow: "0 0 0",
             }}
           >
             <Grid container>
-              <Grid item xs={4}>
+              <Grid item xs={3} sm={4}>
                 <Typography variant="h4">Repos</Typography>
                 <Typography variant="h2">{user.public_repos}</Typography>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={5} sm={4}>
                 <Typography variant="h4">Followers</Typography>
                 <Typography variant="h2">{user.followers}</Typography>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={4} sm={4}>
                 <Typography variant="h4">Following</Typography>
                 <Typography variant="h2">{user.following}</Typography>
               </Grid>
@@ -132,7 +132,13 @@ const CardComponent = ({ user, theme }) => {
             <Grid item container xs={12} sm={6}>
               <TwitterIcon />
               {user.twitter_username ? (
-                <Link underline="hover" href="# " color="primary">
+                <Link
+                  target="_blank"
+                  rel="noopener"
+                  underline="hover"
+                  href="#"
+                  color="primary"
+                >
                   <Typography variant="body1">
                     {user.twitter_username}
                   </Typography>
@@ -144,7 +150,13 @@ const CardComponent = ({ user, theme }) => {
             <Grid item container xs={12} sm={6}>
               <WebsiteIcon />
               {user.blog ? (
-                <Link underline="hover" href="#" color="primary">
+                <Link
+                  target="_blank"
+                  rel="noopener"
+                  underline="hover"
+                  href={user.blog}
+                  color="primary"
+                >
                   <Typography variant="body1">{user.blog}</Typography>
                 </Link>
               ) : (
@@ -156,7 +168,13 @@ const CardComponent = ({ user, theme }) => {
             <Grid item container xs={12} sm={6}>
               <CompanyIcon />
               {user.company ? (
-                <Link underline="hover" href="#" color="primary">
+                <Link
+                  target="_blank"
+                  rel="noopener"
+                  underline="hover"
+                  href={user.company}
+                  color="primary"
+                >
                   <Typography variant="body1">{user.company}</Typography>
                 </Link>
               ) : (

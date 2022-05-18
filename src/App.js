@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { ThemeProvider, Container } from "@mui/material";
+import { ThemeProvider, Grid } from "@mui/material";
 import { lightTheme, darkTheme } from "./themes";
 import SearchBar from "./components/search/search.component";
 import CardComponent from "./components/card-component/cardcomponent.component";
@@ -21,7 +21,6 @@ function App() {
       const response = await fetch(`https://api.github.com/users/${search}`);
       const users = await response.json();
       setUser(users);
-      // console.log(users);
     };
 
     fetchUsers();
@@ -36,11 +35,11 @@ function App() {
     const searchFieldString = e.target.value.toLocaleLowerCase();
     setTextField(searchFieldString);
   };
-  // console.log(textField);
 
   const searchHandler = (e) => {
     e.preventDefault();
     console.log("boom");
+
     setSearch(textField);
   };
 
@@ -48,14 +47,16 @@ function App() {
     <ThemeProvider theme={colors}>
       {/* <ThemeProvider theme={lightTheme}> */}
       <StyledContainer>
-        <TitleContainer mode={mode} themeHandler={themeHandler} />
-        <SearchBar
-          theme={colors}
-          searchHandler={searchHandler}
-          textFieldHandler={textFieldHandler}
-          user={user}
-        />
-        <CardComponent user={user} theme={colors} />
+        <Grid container sx={{ maxWidth: "730px" }}>
+          <TitleContainer mode={mode} themeHandler={themeHandler} />
+          <SearchBar
+            theme={colors}
+            searchHandler={searchHandler}
+            textFieldHandler={textFieldHandler}
+            user={user}
+          />
+          <CardComponent user={user} theme={colors} />
+        </Grid>
       </StyledContainer>
     </ThemeProvider>
   );

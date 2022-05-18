@@ -1,9 +1,7 @@
 import {
   TextField,
-  Card,
   Grid,
   Button,
-  Box,
   Container,
   InputAdornment,
   Typography,
@@ -14,15 +12,16 @@ const SearchBar = ({ theme, textFieldHandler, searchHandler, user }) => {
   return (
     <Container
       color="background.default"
+      disableGutters
       sx={{
         display: "flex",
         justifyContent: "center",
+        margin: "0 12px",
       }}
     >
       <Grid
         container
         alignItems="center"
-        columnSpacing={4}
         sx={{
           maxWidth: "780px",
           padding: "10px 6px",
@@ -35,10 +34,10 @@ const SearchBar = ({ theme, textFieldHandler, searchHandler, user }) => {
           borderRadius: "15px",
         }}
       >
-        <Grid item xs={1}>
+        <Grid item container justifyContent="center" xs={2} sm={1}>
           <SearchIcon />
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={7} sm={9}>
           <TextField
             fullWidth
             placeholder="Search GitHub username..."
@@ -48,21 +47,30 @@ const SearchBar = ({ theme, textFieldHandler, searchHandler, user }) => {
               endAdornment: (
                 <InputAdornment position="end">
                   {user.message === "Not Found" && (
-                    <Typography variant="body1" color="red">
+                    <Typography
+                      variant="body1"
+                      color="red"
+                      sx={{ marginLeft: "0px", marginRight: "16px" }}
+                    >
                       No results
                     </Typography>
                   )}
                 </InputAdornment>
               ),
+              disableUnderline: true,
             }}
           ></TextField>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item container justifyContent="center" xs={3} sm={2}>
           <Button
             variant="contained"
             color="secondary"
             type="submit"
-            sx={{ borderRadius: "10px" }}
+            sx={{
+              borderRadius: "10px",
+              fontWeight: "700",
+              textTransform: "none",
+            }}
             onClick={searchHandler}
           >
             Search

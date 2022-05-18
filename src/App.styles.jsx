@@ -3,10 +3,10 @@ import { Container } from "@mui/material";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
   boxSizing: "border-box",
-  height: "100vh",
+  minHeight: "100vh",
   // maxWidth: "120%",
   // margin: "0px",
-  // padding: 0,
+  padding: "12px",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
