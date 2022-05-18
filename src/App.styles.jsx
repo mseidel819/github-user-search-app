@@ -1,5 +1,4 @@
 import { styled } from "@mui/material";
-import { Container } from "@mui/material";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
   boxSizing: "border-box",
