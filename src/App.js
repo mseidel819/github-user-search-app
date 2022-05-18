@@ -21,7 +21,7 @@ function App() {
       const response = await fetch(`https://api.github.com/users/${search}`);
       const users = await response.json();
       setUser(users);
-      console.log(users);
+      // console.log(users);
     };
 
     fetchUsers();
@@ -53,6 +53,7 @@ function App() {
           theme={colors}
           searchHandler={searchHandler}
           textFieldHandler={textFieldHandler}
+          user={user}
         />
         <CardComponent user={user} theme={colors} />
       </StyledContainer>
