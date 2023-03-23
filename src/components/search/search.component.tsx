@@ -5,10 +5,23 @@ import {
   Container,
   InputAdornment,
   Typography,
+  Theme,
 } from "@mui/material";
+import { notFound, User } from "../../App";
 import { ReactComponent as SearchIcon } from "../../assets/icon-search.svg";
 
-const SearchBar = ({ theme, textFieldHandler, searchHandler, user }) => {
+type SearchProps = {
+  theme: Theme;
+  textFieldHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  searchHandler: (e: Event) => void;
+  user: User | notFound | "";
+};
+const SearchBar = ({
+  theme,
+  textFieldHandler,
+  searchHandler,
+  user,
+}: SearchProps) => {
   return (
     <Container
       color="background.default"
@@ -17,8 +30,7 @@ const SearchBar = ({ theme, textFieldHandler, searchHandler, user }) => {
         display: "flex",
         justifyContent: "center",
         margin: "0 12px",
-      }}
-    >
+      }}>
       <Grid
         container
         alignItems="center"
@@ -26,14 +38,13 @@ const SearchBar = ({ theme, textFieldHandler, searchHandler, user }) => {
           maxWidth: "780px",
           padding: "10px 6px",
           backgroundColor: "background.paper",
-          boxShadow: `${
-            theme.palette.type === "dark"
-              ? "0 0 0 0 rgba(0, 0,0, 0)"
-              : "0px 16px 30px -10px rgba(70, 96, 187, 0.198567)"
-          }`,
+          // boxShadow: `${
+          //   theme.palette.type === "dark"
+          //     ? "0 0 0 0 rgba(0, 0,0, 0)"
+          //     : "0px 16px 30px -10px rgba(70, 96, 187, 0.198567)"
+          // }`,
           borderRadius: "15px",
-        }}
-      >
+        }}>
         <Grid item container justifyContent="center" xs={2} sm={1}>
           <SearchIcon />
         </Grid>
@@ -50,16 +61,14 @@ const SearchBar = ({ theme, textFieldHandler, searchHandler, user }) => {
                     <Typography
                       variant="body1"
                       color="red"
-                      sx={{ marginLeft: "0px", marginRight: "16px" }}
-                    >
+                      sx={{ marginLeft: "0px", marginRight: "16px" }}>
                       No results
                     </Typography>
                   )}
                 </InputAdornment>
               ),
               disableUnderline: true,
-            }}
-          ></TextField>
+            }}></TextField>
         </Grid>
         <Grid item container justifyContent="center" xs={3} sm={2}>
           <Button
@@ -71,8 +80,7 @@ const SearchBar = ({ theme, textFieldHandler, searchHandler, user }) => {
               fontWeight: "700",
               textTransform: "none",
             }}
-            onClick={searchHandler}
-          >
+            onClick={searchHandler}>
             Search
           </Button>
         </Grid>

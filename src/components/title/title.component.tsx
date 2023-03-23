@@ -2,7 +2,12 @@ import { Grid, Button, Container, Typography } from "@mui/material";
 import { ReactComponent as LightIcon } from "../../assets/icon-sun.svg";
 import { ReactComponent as DarkIcon } from "../../assets/icon-moon.svg";
 
-const TitleContainer = ({ mode, themeHandler }) => {
+type TitleProps = {
+  mode: boolean;
+  themeHandler: () => void;
+};
+
+const TitleContainer = ({ mode, themeHandler }: TitleProps) => {
   return (
     <Container>
       <Grid container justifyContent="space-between">
@@ -15,8 +20,7 @@ const TitleContainer = ({ mode, themeHandler }) => {
           <Button
             variant="text"
             startIcon={mode ? <LightIcon /> : <DarkIcon />}
-            onClick={themeHandler}
-          >
+            onClick={themeHandler}>
             {mode ? "Light" : "Dark"}
           </Button>
         </Grid>
